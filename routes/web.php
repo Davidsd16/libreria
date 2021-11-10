@@ -1,7 +1,8 @@
 <?php
 
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Route;
-
+use Illuminate\Support\Facades\CategoriasController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,5 +19,8 @@ Route::get('/', function () {
 });
 
 Auth::routes();
+
+Route::resource('libros', App\Http\Controllers\LibroController::class);
+Route::resource('categorias', App\Http\Controllers\CategoriasController::class);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
